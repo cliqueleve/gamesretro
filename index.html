@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Game Stick 4K Retrô — 10.000 jogos por R$ 150</title>
+<meta name="description" content="10.000 jogos clássicos na sua TV com 2 controles sem fio. Pluga no HDMI e joga. Sem internet, sem assinatura. R$ 150 à vista.">
+<meta property="og:title" content="10.000 jogos por menos que UM jogo de PlayStation">
+<meta property="og:description" content="Game Stick 4K Retrô com 2 controles sem fio. R$ 150. Chega antes do Natal.">
+<meta property="og:image" content="assets/hero-limpo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#07090F;
+    --ink-2:#0D111C;
+    --ink-3:#141A29;
+    --amber:#F5A623;
+    --amber-2:#FFC65C;
+    --muted:#94A0B8;
+    --line:rgba(255,255,255,.09);
+    --ok:#3DD68C;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    background:var(--ink);color:#fff;
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;line-height:1.6;overflow-x:hidden;
+  }
+  img{max-width:100%;display:block}
+  .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 24px}
+  .narrow{max-width:780px;margin:0 auto}
+
+  /* ---------- topbar ---------- */
+  .topbar{
+    background:linear-gradient(90deg,#F5A623,#FFC65C);
+    color:#0A0E1A;text-align:center;font-size:12.5px;font-weight:800;
+    letter-spacing:.03em;padding:10px 16px;text-transform:uppercase;
+  }
+
+  /* ---------- nav ---------- */
+  .nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(7,9,15,.82);backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+  .logo{display:flex;align-items:center;gap:9px;font-weight:900;letter-spacing:-.03em;font-size:17px}
+  .logo .mark{
+    width:26px;height:26px;border-radius:8px;
+    background:linear-gradient(135deg,var(--amber-2),var(--amber));
+    display:grid;place-items:center;color:#0A0E1A;font-size:14px;font-weight:900;
+  }
+  .logo small{display:block;font-size:9.5px;font-weight:700;letter-spacing:.16em;color:var(--muted);text-transform:uppercase;line-height:1}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:8px;
+    background:linear-gradient(180deg,var(--amber-2),var(--amber));
+    color:#0A0E1A;font-weight:900;font-size:14px;text-decoration:none;
+    padding:11px 20px;border-radius:100px;white-space:nowrap;
+    box-shadow:0 8px 22px -8px rgba(245,166,35,.7);
+  }
+  .nav-price{font-size:12px;color:var(--muted);font-weight:600;display:none}
+  @media(min-width:700px){.nav-price{display:block}}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;padding:56px 0 64px;overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;top:-30%;right:-15%;width:70%;height:120%;
+    background:radial-gradient(circle at 60% 40%, rgba(245,166,35,.20), transparent 60%);
+    pointer-events:none;
+  }
+  .hero::after{
+    content:"";position:absolute;bottom:-40%;left:-20%;width:60%;height:100%;
+    background:radial-gradient(circle at 40% 60%, rgba(61,214,140,.07), transparent 65%);
+    pointer-events:none;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:52px;align-items:center;position:relative;z-index:2}
+  .pill{
+    display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:800;
+    letter-spacing:.13em;text-transform:uppercase;color:var(--amber);
+    background:rgba(245,166,35,.09);border:1px solid rgba(245,166,35,.3);
+    padding:8px 14px;border-radius:100px;margin-bottom:22px;
+  }
+  .pulse{width:7px;height:7px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 0 rgba(245,166,35,.7);animation:pulse 2s infinite}
+  @keyframes pulse{70%{box-shadow:0 0 0 9px rgba(245,166,35,0)}100%{box-shadow:0 0 0 0 rgba(245,166,35,0)}}
+
+  h1{
+    font-size:clamp(33px,5vw,60px);line-height:1.03;font-weight:900;
+    letter-spacing:-.04em;margin-bottom:20px;text-wrap:balance;
+  }
+  h1 em{font-style:normal;color:var(--amber)}
+  .sub{font-size:clamp(15px,1.6vw,18px);color:#C4CEE0;max-width:50ch;margin-bottom:28px}
+  .sub b{color:#fff;font-weight:700}
+
+  .price-box{
+    border-left:3px solid var(--amber);padding-left:18px;margin-bottom:8px;
+  }
+  .price-label{font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+  .price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .price .cur{font-size:22px;font-weight:800;color:var(--amber)}
+  .price .val{font-size:clamp(46px,6.2vw,68px);font-weight:900;letter-spacing:-.045em;line-height:.95}
+  .price .cents{font-size:26px;font-weight:900;color:var(--amber)}
+  .install{font-size:13.5px;color:var(--muted);margin-top:8px}
+  .install b{color:#fff}
+  .install s{color:#6F7A90}
+
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:11px;
+    width:100%;max-width:430px;background:linear-gradient(180deg,var(--amber-2),#F0930F);
+    color:#0A0E1A;font-weight:900;font-size:17.5px;letter-spacing:-.01em;text-decoration:none;
+    border:none;border-radius:15px;padding:20px 28px;margin-top:24px;cursor:pointer;
+    box-shadow:0 16px 40px -14px rgba(245,166,35,.85),inset 0 1px 0 rgba(255,255,255,.5);
+    transition:transform .16s ease,box-shadow .16s ease;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 22px 48px -14px rgba(245,166,35,.95),inset 0 1px 0 rgba(255,255,255,.5)}
+  .btn:active{transform:translateY(0)}
+  .trust{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:16px;font-size:12.5px;color:var(--muted);font-weight:600}
+  .trust span{display:flex;align-items:center;gap:6px}
+  .trust i{color:var(--ok);font-style:normal;font-weight:900}
+
+  .hero-media{position:relative}
+  .hero-media .frame{
+    border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.12);
+    box-shadow:0 50px 90px -40px #000,0 0 0 1px rgba(245,166,35,.08);
+    aspect-ratio:4/5;background:var(--ink-2);
+  }
+  .hero-media .frame img{width:100%;height:100%;object-fit:cover}
+  .sticker{
+    position:absolute;bottom:-18px;left:-18px;
+    background:var(--amber);color:#0A0E1A;border-radius:16px;padding:14px 18px;
+    font-weight:900;line-height:1.05;box-shadow:0 20px 40px -16px rgba(0,0,0,.9);
+    transform:rotate(-3deg);
+  }
+  .sticker .big{font-size:26px;letter-spacing:-.03em;display:block}
+  .sticker .small{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;opacity:.8}
+
+  /* ---------- proof strip ---------- */
+  .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.02)}
+  .strip-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+  .strip-item{padding:28px 16px;text-align:center;border-right:1px solid var(--line)}
+  .strip-item:last-child{border-right:none}
+  .strip-num{font-size:clamp(21px,2.6vw,30px);font-weight:900;letter-spacing:-.03em;color:var(--amber);line-height:1}
+  .strip-lab{font-size:11.5px;color:var(--muted);margin-top:7px;font-weight:600;letter-spacing:.02em}
+
+  /* ---------- sections ---------- */
+  section{padding:84px 0}
+  .eyebrow{font-size:11.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin-bottom:16px}
+  h2{font-size:clamp(27px,3.9vw,44px);font-weight:900;letter-spacing:-.035em;line-height:1.06;margin-bottom:18px;text-wrap:balance}
+  h2 em{font-style:normal;color:var(--amber)}
+  .lead{color:#C4CEE0;font-size:16.5px;max-width:64ch}
+  .lead + .lead{margin-top:14px}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+  .card{
+    background:linear-gradient(170deg,rgba(255,255,255,.055),rgba(255,255,255,.012));
+    border:1px solid var(--line);border-radius:20px;padding:30px 26px;
+    transition:border-color .2s ease,transform .2s ease;
+  }
+  .card:hover{border-color:rgba(245,166,35,.35);transform:translateY(-3px)}
+  .card .ico{
+    width:46px;height:46px;border-radius:13px;display:grid;place-items:center;font-size:22px;
+    background:rgba(245,166,35,.13);border:1px solid rgba(245,166,35,.28);margin-bottom:18px;
+  }
+  .card h3{font-size:17.5px;font-weight:800;margin-bottom:9px;letter-spacing:-.015em}
+  .card p{font-size:14.5px;color:var(--muted);line-height:1.62}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px;counter-reset:s}
+  .step{position:relative;border:1px solid var(--line);border-radius:20px;padding:30px 26px;background:rgba(255,255,255,.025)}
+  .step .n{
+    font-size:44px;font-weight:900;letter-spacing:-.05em;line-height:1;
+    color:transparent;-webkit-text-stroke:1.5px rgba(245,166,35,.55);margin-bottom:14px;
+  }
+  .step h3{font-size:16.5px;font-weight:800;margin-bottom:8px}
+  .step p{font-size:14px;color:var(--muted)}
+
+  /* box section */
+  .box-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:40px}
+  .box-img{background:#fff;border-radius:20px;padding:26px;border:1px solid rgba(255,255,255,.12)}
+  .box-img img{width:100%;height:auto;border-radius:8px}
+  .list{list-style:none;display:grid;gap:15px}
+  .list li{display:flex;gap:13px;align-items:flex-start;font-size:15.5px;color:#DCE3EF}
+  .list li b{color:#fff}
+  .check{
+    flex:0 0 23px;height:23px;border-radius:50%;background:rgba(61,214,140,.14);
+    border:1px solid rgba(61,214,140,.45);color:var(--ok);display:grid;place-items:center;
+    font-size:12px;font-weight:900;margin-top:2px;
+  }
+
+  /* compare */
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:44px}
+  .col{border-radius:20px;padding:32px 28px;border:1px solid var(--line)}
+  .col.bad{background:rgba(255,255,255,.022)}
+  .col.good{background:linear-gradient(180deg,rgba(245,166,35,.12),rgba(245,166,35,.03));border-color:rgba(245,166,35,.35)}
+  .col h3{font-size:12.5px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:20px;font-weight:900}
+  .col.bad h3{color:#7E8AA1}
+  .col.good h3{color:var(--amber)}
+  .col ul{list-style:none;display:grid;gap:13px;font-size:14.5px;color:#C4CEE0}
+  .col li{display:flex;gap:11px;align-items:flex-start}
+  .x{color:#5E6880;font-weight:900;flex:0 0 auto}
+  .v{color:var(--amber);font-weight:900;flex:0 0 auto}
+
+  /* honest block */
+  .honest{
+    background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.015));
+    border:1px solid var(--line);border-radius:24px;padding:44px 40px;margin-top:8px;
+  }
+  .honest h2{font-size:clamp(24px,3.2vw,34px)}
+  .honest p{color:#C4CEE0;font-size:15.5px}
+  .honest p + p{margin-top:14px}
+  .honest strong{color:#fff}
+
+  /* offer block */
+  .offer{
+    background:radial-gradient(120% 100% at 50% 0%,rgba(245,166,35,.16),rgba(245,166,35,.02) 60%);
+    border-top:1px solid rgba(245,166,35,.25);border-bottom:1px solid rgba(245,166,35,.25);
+  }
+  .offer-card{
+    background:rgba(9,12,20,.72);border:1px solid rgba(245,166,35,.32);border-radius:26px;
+    padding:44px 40px;box-shadow:0 50px 100px -50px #000;
+  }
+  .stack{list-style:none;display:grid;gap:0;margin:26px 0 8px}
+  .stack li{
+    display:flex;justify-content:space-between;gap:20px;align-items:flex-start;
+    padding:14px 0;border-bottom:1px dashed rgba(255,255,255,.1);font-size:15px;color:#DCE3EF;
+  }
+  .stack li:last-child{border-bottom:none}
+  .stack .val{color:var(--muted);white-space:nowrap;font-weight:600;font-size:14px;text-decoration:line-through}
+  .stack .free{color:var(--ok);font-weight:800;font-size:13px;text-decoration:none;letter-spacing:.04em}
+  .total{
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+    padding:20px 0 4px;border-top:2px solid rgba(245,166,35,.35);margin-top:10px;
+    font-weight:800;font-size:15px;color:#C4CEE0;
+  }
+  .total .t-val{color:var(--muted);text-decoration:line-through;font-size:15px}
+
+  /* guarantee */
+  .guarantee{display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:center;margin-top:10px}
+  .seal{
+    width:150px;height:150px;border-radius:50%;display:grid;place-items:center;text-align:center;
+    border:2px dashed rgba(245,166,35,.55);background:rgba(245,166,35,.06);flex:0 0 auto;
+  }
+  .seal .d{font-size:40px;font-weight:900;color:var(--amber);line-height:1}
+  .seal .t{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:5px;font-weight:800;line-height:1.4}
+
+  /* reviews */
+  .revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+  .rev{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:18px;padding:26px}
+  .stars{color:var(--amber);font-size:13px;letter-spacing:3px;margin-bottom:12px}
+  .rev p{font-size:14.5px;color:#DCE3EF;line-height:1.62}
+  .rev .who{margin-top:16px;font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.02em}
+  .note{
+    margin-top:22px;font-size:12.5px;color:var(--muted);line-height:1.6;
+    border:1px dashed rgba(255,255,255,.16);border-radius:12px;padding:14px 16px;
+  }
+
+  /* faq */
+  details{border-bottom:1px solid var(--line);padding:22px 0}
+  details:first-of-type{border-top:1px solid var(--line)}
+  summary{
+    cursor:pointer;font-weight:700;font-size:16px;list-style:none;
+    display:flex;justify-content:space-between;gap:20px;align-items:flex-start;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--amber);font-size:24px;font-weight:800;line-height:1;flex:0 0 auto}
+  details[open] summary::after{content:"–"}
+  details p{margin-top:14px;color:var(--muted);font-size:14.5px;line-height:1.7}
+
+  /* final cta */
+  .final{text-align:center}
+  .final .btn{margin-left:auto;margin-right:auto}
+  .final .lead{margin:0 auto}
+  .final .trust{justify-content:center}
+
+  footer{padding:44px 0 110px;color:#5E6880;font-size:12px;text-align:center;line-height:1.75;border-top:1px solid var(--line)}
+
+  /* sticky mobile */
+  .sticky{
+    position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;
+    background:rgba(7,9,15,.94);backdrop-filter:blur(14px);
+    border-top:1px solid rgba(245,166,35,.3);padding:11px 16px;
+    align-items:center;gap:14px;
+  }
+  .sticky .p{line-height:1.1;flex:0 0 auto}
+  .sticky .p b{display:block;font-size:19px;font-weight:900;letter-spacing:-.03em}
+  .sticky .p span{font-size:10.5px;color:var(--muted);font-weight:600}
+  .sticky .btn{margin:0;padding:14px 18px;font-size:15px;border-radius:12px;max-width:none;flex:1}
+  @media(max-width:860px){.sticky{display:flex}}
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:38px}
+    .hero-media{order:-1;max-width:430px;margin:0 auto;width:100%}
+    .sticker{left:auto;right:-8px;bottom:-16px;transform:rotate(3deg)}
+    .cards,.steps,.revs{grid-template-columns:1fr}
+    .box-grid,.compare{grid-template-columns:1fr;gap:26px}
+    .strip-grid{grid-template-columns:1fr 1fr}
+    .strip-item:nth-child(2){border-right:none}
+    .strip-item:nth-child(1),.strip-item:nth-child(2){border-bottom:1px solid var(--line)}
+    section{padding:60px 0}
+    .offer-card,.honest{padding:32px 24px;border-radius:20px}
+    .guarantee{grid-template-columns:1fr;gap:22px;text-align:center;justify-items:center}
+    .btn{max-width:none}
+    footer{padding-bottom:100px}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">Frete grátis · Pedidos até 15/12 chegam antes do Natal</div>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <div class="logo">
+      <span class="mark">K</span>
+      <span>Game Stick 4K<small>Retrô · 10.000 jogos</small></span>
+    </div>
+    <span class="nav-price">R$ 150 · 2 controles inclusos</span>
+    <a class="nav-cta" href="#oferta">Quero o meu</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill"><span class="pulse"></span>Oferta de Natal · R$ 150</span>
+      <h1>10.000 jogos por menos que <em>um</em> jogo de PlayStation.</h1>
+      <p class="sub">O videogame que você jogou na casa do seu primo, inteiro, num stick do tamanho de um pen drive. <b>Pluga no HDMI e joga</b> — sem internet, sem assinatura, sem console de R$ 3.500.</p>
+
+      <div class="price-box">
+        <div class="price-label">Hoje por</div>
+        <div class="price">
+          <span class="cur">R$</span><span class="val">150</span><span class="cents">,00</span>
+        </div>
+        <div class="install">à vista no Pix · ou <b>12x de R$ 12,50</b> no cartão · <s>R$ 297</s></div>
+      </div>
+
+      <a class="btn" href="#oferta">QUERO MEU GAME STICK →</a>
+      <div class="trust">
+        <span><i>✓</i> 2 controles sem fio inclusos</span>
+        <span><i>✓</i> 7 dias para devolver</span>
+        <span><i>✓</i> Chega antes do Natal</span>
+      </div>
+    </div>
+
+    <div class="hero-media">
+      <div class="frame">
+        <img src="assets/hero-limpo.png" alt="Game Stick 4K Retrô com dois controles sem fio na frente da TV">
+      </div>
+      <div class="sticker">
+        <span class="big">10.000</span>
+        <span class="small">jogos na palma da mão</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="strip">
+  <div class="wrap">
+    <div class="strip-grid">
+      <div class="strip-item"><div class="strip-num">10.000</div><div class="strip-lab">jogos clássicos</div></div>
+      <div class="strip-item"><div class="strip-num">2</div><div class="strip-lab">controles sem fio</div></div>
+      <div class="strip-item"><div class="strip-num">40s</div><div class="strip-lab">para instalar</div></div>
+      <div class="strip-item"><div class="strip-num">R$ 0</div><div class="strip-lab">de mensalidade</div></div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">A conta que ninguém faz</div>
+    <h2>Você já pagou R$ 349 num jogo<br>e jogou <em>duas semanas</em>.</h2>
+    <p class="lead">Um jogo de PlayStation 5 custa hoje entre R$ 250 e R$ 350. Um console novo, R$ 3.500. Esse stick custa R$ 150 e traz dez mil jogos dentro — os mesmos que você zerou dez vezes na infância e nunca esqueceu.</p>
+    <p class="lead">Não é o videogame mais potente do mundo. É o mais honesto: você paga R$ 150, recebe dez mil jogos e dois controles, e joga com quem estiver na sala.</p>
+
+    <div class="cards">
+      <div class="card">
+        <div class="ico">📺</div>
+        <h3>Funciona em qualquer TV com HDMI</h3>
+        <p>É o mesmo plugue do Chromecast. Pluga, liga na tomada e o menu de jogos aparece na tela. Não precisa de computador, celular nem configuração.</p>
+      </div>
+      <div class="card">
+        <div class="ico">📶</div>
+        <h3>Não precisa de internet</h3>
+        <p>Os 10 mil jogos já estão gravados dentro do aparelho. Sem wi-fi, sem assinatura, sem cair a conexão no meio da fase final.</p>
+      </div>
+      <div class="card">
+        <div class="ico">🎮</div>
+        <h3>Já vem com dois controles</h3>
+        <p>Dois controles sem fio 2.4G e as pilhas inclusas. Dá para jogar em dois na hora — que é como esse produto deveria ser jogado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:rgba(255,255,255,.02);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="eyebrow">Do zero ao jogo</div>
+    <h2>Quarenta segundos. <em>Sem manual.</em></h2>
+    <div class="steps">
+      <div class="step">
+        <div class="n">01</div>
+        <h3>Pluga no HDMI da TV</h3>
+        <p>O stick entra na entrada HDMI, como um pen drive. O cabo de alimentação vai na tomada ou na USB da própria TV.</p>
+      </div>
+      <div class="step">
+        <div class="n">02</div>
+        <h3>Liga e escolhe o jogo</h3>
+        <p>O menu abre organizado por console e por gênero: luta, corrida, plataforma, arcade. Acha o que quer em segundos.</p>
+      </div>
+      <div class="step">
+        <div class="n">03</div>
+        <h3>Aperta start e chama alguém</h3>
+        <p>Os dois controles já vêm pareados. Senta no sofá, chama o irmão, o filho ou o pai. É para isso que ele existe.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">O que chega na sua casa</div>
+    <h2>Tudo na caixa. <em>Nada à parte.</em></h2>
+    <div class="box-grid">
+      <div class="box-img">
+        <img src="assets/produto-kit.jpg" alt="Conteúdo da caixa: game stick, dois controles, cabos e cartão de memória">
+      </div>
+      <ul class="list">
+        <li><span class="check">✓</span><span><b>1 Game Stick 4K Retrô</b> com 10.000 jogos gravados</span></li>
+        <li><span class="check">✓</span><span><b>2 controles sem fio 2.4G</b> com receptor USB</span></li>
+        <li><span class="check">✓</span><span><b>Cabo HDMI</b> e cabo de alimentação</span></li>
+        <li><span class="check">✓</span><span><b>Pilhas</b> para os dois controles</span></li>
+        <li><span class="check">✓</span><span><b>Guia rápido</b> de uma página, sem termo técnico</span></li>
+        <li><span class="check">✓</span><span><b>Suporte no WhatsApp</b> para instalar, se precisar</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section style="background:rgba(255,255,255,.02);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="eyebrow">Comparação honesta</div>
+    <h2>Os mesmos clássicos.<br><em>Vinte e três vezes mais barato.</em></h2>
+    <div class="compare">
+      <div class="col bad">
+        <h3>Console novo</h3>
+        <ul>
+          <li><span class="x">✕</span> R$ 3.500 no aparelho</li>
+          <li><span class="x">✕</span> R$ 250 a R$ 350 por jogo</li>
+          <li><span class="x">✕</span> Precisa de internet rápida</li>
+          <li><span class="x">✕</span> Assinatura mensal para jogar online</li>
+          <li><span class="x">✕</span> Seu pai não sabe nem ligar</li>
+        </ul>
+      </div>
+      <div class="col good">
+        <h3>Game Stick 4K · R$ 150</h3>
+        <ul>
+          <li><span class="v">✓</span> R$ 150, uma vez, e pronto</li>
+          <li><span class="v">✓</span> 10.000 jogos inclusos</li>
+          <li><span class="v">✓</span> Funciona sem internet</li>
+          <li><span class="v">✓</span> Zero mensalidade, para sempre</li>
+          <li><span class="v">✓</span> Um botão liga e já abre o jogo</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap narrow">
+    <div class="honest">
+      <div class="eyebrow">Antes que você pergunte</div>
+      <h2>“Se é tão barato, <em>deve ser ruim</em>.”</h2>
+      <p>Não é ruim. É <strong>de outra época</strong> — e é isso que você está comprando.</p>
+      <p>Esse aparelho roda jogos de 8 e 16 bits: Super Nintendo, Mega Drive, Master System, Game Boy, arcade. O gráfico é o de 1994, não o de 2026. Se você procura o realismo do PlayStation 5, não compre — eu prefiro te falar isso agora do que receber seu produto de volta em duas semanas.</p>
+      <p>Agora, se o que você quer é <strong>sentar no sofá e jogar Sonic, Street Fighter, Bomberman e Mario Kart com alguém do lado</strong>, com dois controles na mão e sem pagar R$ 3.500 por isso, então R$ 150 é o melhor dinheiro que você vai gastar esse ano.</p>
+      <p>É a mesma lógica do disco de vinil: não é melhor que o streaming. É outra coisa. E por isso as pessoas pagam por ele.</p>
+    </div>
+  </div>
+</section>
+
+<section class="offer" id="oferta">
+  <div class="wrap narrow">
+    <div style="text-align:center;margin-bottom:34px">
+      <div class="eyebrow" style="justify-content:center">Oferta de Natal · lote de novembro</div>
+      <h2>O que você leva por <em>R$ 150</em></h2>
+    </div>
+
+    <div class="offer-card">
+      <ul class="stack">
+        <li><span>Game Stick 4K Retrô com 10.000 jogos</span><span class="val">R$ 297</span></li>
+        <li><span>2 controles sem fio 2.4G + pilhas</span><span class="val">R$ 120</span></li>
+        <li><span>Cabo HDMI e cabo de alimentação</span><span class="val">R$ 39</span></li>
+        <li><span>Guia rápido de instalação em 1 página</span><span class="val">R$ 27</span></li>
+        <li><span>Suporte de instalação no WhatsApp</span><span class="free">INCLUSO</span></li>
+        <li><span>Garantia de 7 dias para devolver</span><span class="free">INCLUSO</span></li>
+        <li><span>Frete para todo o Brasil</span><span class="free">GRÁTIS</span></li>
+      </ul>
+
+      <div class="total">
+        <span>Valor se comprado separado</span>
+        <span class="t-val">R$ 483</span>
+      </div>
+
+      <div style="text-align:center;margin-top:26px">
+        <div class="price-label" style="margin-bottom:6px">Você paga hoje</div>
+        <div class="price" style="justify-content:center">
+          <span class="cur">R$</span><span class="val">150</span><span class="cents">,00</span>
+        </div>
+        <div class="install">à vista no Pix · ou <b>12x de R$ 12,50</b> no cartão</div>
+        <a class="btn" href="#" id="cta-principal" style="margin-left:auto;margin-right:auto">GARANTIR O MEU AGORA →</a>
+        <div class="trust" style="justify-content:center">
+          <span><i>✓</i> Pagamento seguro</span>
+          <span><i>✓</i> 7 dias para devolver</span>
+          <span><i>✓</i> Envio em 24h úteis</span>
+        </div>
+      </div>
+    </div>
+
+    <p style="text-align:center;color:var(--muted);font-size:13px;margin-top:22px;line-height:1.7">
+      Pedidos feitos até <b style="color:#fff">15/12</b> chegam antes do Natal.<br>
+      Depois dessa data o prazo passa a depender dos Correios, e eu não consigo prometer nada.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap narrow">
+    <div class="guarantee">
+      <div class="seal">
+        <div>
+          <div class="d">7</div>
+          <div class="t">dias para<br>devolver</div>
+        </div>
+      </div>
+      <div>
+        <h2 style="font-size:clamp(22px,3vw,30px)">O risco é meu, não seu.</h2>
+        <p class="lead">Você tem sete dias, a partir do recebimento, para devolver sem precisar justificar nada. É o prazo do Código de Defesa do Consumidor e eu não discuto.</p>
+        <p class="lead">Se travar na instalação, me chama no WhatsApp: eu te mando um vídeo de quarenta segundos mostrando exatamente onde clicar. Ninguém fica com um aparelho parado na caixa por falta de suporte.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:rgba(255,255,255,.02);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="eyebrow">Quem já levou</div>
+    <h2>O presente que ninguém devolve.</h2>
+    <div class="revs">
+      <div class="rev">
+        <div class="stars">★★★★★</div>
+        <p>"Comprei pro meu pai de 61 anos achando que ele ia ignorar. Ele jogou mais que eu no Natal. Já pedi outro pro meu sogro."</p>
+        <div class="who">Rodrigo M. · Campinas, SP</div>
+      </div>
+      <div class="rev">
+        <div class="stars">★★★★★</div>
+        <p>"Chegou em 9 dias, veio tudo certinho. Achei que ia ser difícil de instalar e foi literalmente plugar e apertar um botão."</p>
+        <div class="who">Patrícia L. · Belo Horizonte, MG</div>
+      </div>
+      <div class="rev">
+        <div class="stars">★★★★★</div>
+        <p>"Não tem o gráfico do console novo, óbvio. Mas os jogos são os mesmos da minha infância e meus filhos adoraram. Valeu cada centavo."</p>
+        <div class="who">Anderson S. · Curitiba, PR</div>
+      </div>
+    </div>
+    <div class="note">Substitua os três depoimentos acima por prints reais de clientes assim que tiver as primeiras vendas. Depoimento inventado, além de ser crime, derruba a conta de anúncio quando o cliente percebe.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap narrow">
+    <div class="eyebrow">Antes de comprar</div>
+    <h2>As dúvidas que todo mundo tem.</h2>
+
+    <details open>
+      <summary>Funciona na minha TV?</summary>
+      <p>Se a sua TV tem entrada HDMI — praticamente todas dos últimos 12 anos têm — funciona. É o mesmo plugue que você usa no Chromecast ou no receptor da TV a cabo. Se quiser confirmar, me manda o modelo da TV no WhatsApp antes de comprar.</p>
+    </details>
+    <details>
+      <summary>Precisa de internet para jogar?</summary>
+      <p>Não. Os 10 mil jogos já vêm gravados no aparelho. Depois de ligar, você nunca mais precisa de wi-fi. Só a instalação inicial do menu não exige conexão também.</p>
+    </details>
+    <details>
+      <summary>Vem quantos jogos e de quais consoles?</summary>
+      <p>São 10 mil títulos divididos entre Super Nintendo, Mega Drive, Master System, Game Boy, arcade e outros consoles clássicos. O menu é organizado por console e por gênero, então dá para achar rápido o que você quer jogar.</p>
+    </details>
+    <details>
+      <summary>Por que custa R$ 150 e não R$ 400?</summary>
+      <p>Porque eu compro direto do fornecedor, sem loja física, sem estoque parado e sem intermediário. É o mesmo modelo de quem vende em marketplace, só que sem a taxa da plataforma em cima do preço final. O produto é o mesmo; o caminho até você é mais curto.</p>
+    </details>
+    <details>
+      <summary>Chega antes do Natal?</summary>
+      <p>O prazo médio é de 10 dias úteis. Pedidos feitos até 15/12 têm entrega garantida antes do Natal. Depois dessa data eu não consigo prometer, porque o prazo passa a depender dos Correios e não de mim.</p>
+    </details>
+    <details>
+      <summary>E se eu não gostar?</summary>
+      <p>Você tem 7 dias para devolver, sem precisar justificar. É o prazo do Código de Defesa do Consumidor e eu não discuto. O risco é meu, não seu.</p>
+    </details>
+    <details>
+      <summary>Como funciona o pagamento?</summary>
+      <p>Pix à vista ou cartão em até 12x. O pagamento é processado pela plataforma Kaiross, que também cuida do envio do pedido ao fornecedor e do pós-venda. Você recebe o código de rastreio no WhatsApp.</p>
+    </details>
+  </div>
+</section>
+
+<section class="final" style="background:radial-gradient(90% 100% at 50% 0%,rgba(245,166,35,.14),transparent 70%)">
+  <div class="wrap narrow">
+    <div class="eyebrow">Última chamada</div>
+    <h2>Seu pai não precisa<br>de <em>outro perfume</em>.</h2>
+    <p class="lead" style="text-align:center;margin-bottom:6px">Ele precisa de uma tarde de sábado jogando Sonic com você. R$ 150, com os dois controles, antes do Natal.</p>
+    <a class="btn" href="#" id="cta-final">QUERO O MEU AGORA →</a>
+    <div class="trust">
+      <span><i>✓</i> Frete grátis</span>
+      <span><i>✓</i> 7 dias para devolver</span>
+      <span><i>✓</i> Chega antes do Natal</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Produto vendido por <b style="color:#8A94A8">[SEU NOME / SUA MARCA]</b> através da plataforma Kaiross.</p>
+    <p>Pagamento processado pela Kaiross · Envio pelo fornecedor parceiro · Prazo médio de 10 dias úteis</p>
+    <p style="margin-top:16px;max-width:70ch;margin-left:auto;margin-right:auto">Esta página não é afiliada a nenhum fabricante de console ou de jogo. Nomes de jogos e consoles citados pertencem aos seus respectivos detentores e são usados apenas para descrever a compatibilidade do produto.</p>
+  </div>
+</footer>
+
+<div class="sticky">
+  <div class="p"><b>R$ 150</b><span>12x de R$ 12,50</span></div>
+  <a class="btn" href="#" id="cta-sticky">COMPRAR →</a>
+</div>
+
+<script>
+  // Cole aqui o seu link de checkout da Kaiross. Ele vale para os três botões.
+  const CHECKOUT_URL = "#";
+  if (CHECKOUT_URL !== "#") {
+    ["cta-principal", "cta-final", "cta-sticky"].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) el.setAttribute("href", CHECKOUT_URL);
+    });
+    document.querySelectorAll('.nav-cta').forEach(function (el) {
+      el.setAttribute("href", CHECKOUT_URL);
+    });
+  }
+</script>
+
+</body>
+</html>
